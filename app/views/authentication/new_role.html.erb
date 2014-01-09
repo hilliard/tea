@@ -1,0 +1,21 @@
+<h1>New Role</h1>
+<div class="container">
+
+    <%= form_for(@role, :url => new_role_path) do |f| %>
+        <p>
+          <%= f.label 'Name:' %><br/>
+          <%= f.text_field :name %>
+          <%= show_field_error(@role, :name) %>
+        </p>
+        <p>
+          <%= f.label 'Description:' %><br/>
+          <%= f.text_field :description%>
+          <%= show_field_error(@role, :description) %>
+        </p>
+        
+        <p>
+          <%= f.submit %><br>
+          <%= f.submit 'Clear Form', class: "btn btn-medium btn-primary", :type => 'reset' %>
+        </p>
+    <% end %>
+  </div>

@@ -1,0 +1,71 @@
+<%= form_for(@test_case) do |f| %>
+  <% if @test_case.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@test_case.errors.count, "error") %> prohibited this test_case from being saved:</h2>
+
+      <ul>
+      <% @test_case.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="row">
+   <div class="col-md-6">
+      <div class="field">
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </div>
+      <div class="field">
+        <%= f.label :precondition %><br>
+        <%= f.text_area :precondition %>
+      </div>
+      <div class="field">
+        <%= f.label :step %><br>
+        <%= f.text_area :step %>
+      </div>
+
+     <!-- The Step Section -->
+     <div>
+       <div class="span8">
+         <% if @test_case.steps.any? %>
+             <h3>Steps (<%= @test_case.steps.count %>)</h3>
+             <ol class="steps">
+               <%= render @steps %>
+             </ol>
+             <%= will_paginate @steps %>
+         <% end %>
+       </div>
+     </div>
+
+      <div class="field">
+        <%= f.label :testdata %><br>
+        <%= f.text_area :testdata %>
+      </div>
+      <div class="field">
+        <%= f.label :expected_results %><br>
+        <%= f.text_field :expected_results %>
+      </div>
+      <div class="field">
+        <%= f.label :subsystem %><br>
+        <%= f.text_field :subsystem %>
+      </div>
+      <div class="field">
+        <%= f.label :postcondition %><br>
+        <%= f.text_area :postcondition %>
+      </div>
+      <div class="field">
+         <%= f.label :requirement_reference %><br>
+         <%= f.text_area :requirement_reference %>
+      </div>
+      <div class="field">
+        <%= f.label :comments %><br>
+        <%= f.text_area :comments %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+        <%= link_to 'Back', test_cases_path %>
+      </div>
+     </div>
+   </div>
+<% end %>

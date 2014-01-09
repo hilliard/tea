@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  track_id: MyString
+  description: MyString
+  tester: MyString
+  status: MyString
+  priority: MyString
+  risk: MyString
+  plan_comp_date: 2013-09-10
+  actl_start_time: 2013-09-10 14:39:07
+  actl_comp_time: 2013-09-10 14:39:07
+  test_type: MyString
+  comment: MyText
+  specification: MyString
+  bug_id: MyString
+
+two:
+  track_id: MyString
+  description: MyString
+  tester: MyString
+  status: MyString
+  priority: MyString
+  risk: MyString
+  plan_comp_date: 2013-09-10
+  actl_start_time: 2013-09-10 14:39:07
+  actl_comp_time: 2013-09-10 14:39:07
+  test_type: MyString
+  comment: MyText
+  specification: MyString
+  bug_id: MyString

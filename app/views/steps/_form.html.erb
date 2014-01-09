@@ -1,0 +1,48 @@
+<%= form_for(@step) do |f| %>
+  <% if @step.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@step.errors.count, "error") %> prohibited this step from being saved:</h2>
+
+      <ul>
+      <% @step.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="container">
+
+          <div class="field">
+            <%= f.label :step_number %><br>
+            <%= f.number_field :step_number %>
+          </div>
+          <div class="field">
+            <%= f.label :action %><br>
+            <%= f.text_area :action %>
+          </div>
+          <div class="field">
+            <%= f.label :expected_result %><br>
+            <%= f.text_area :expected_result %>
+          </div>
+          <div class="field">
+            <%= f.label :status %><br>
+            <%= f.collection_select(:status, StepStatus.all, :stepstatus_name, :stepstatus_name) %>
+          </div>
+
+
+      <div class="form-actions">
+        <div class="responsive-container">
+          <%= f.submit 'Create Step', class: "btn btn-medium btn-primary"  %> <br>
+          <%= link_to 'Back To List', steps_path %>
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+  <% end %>

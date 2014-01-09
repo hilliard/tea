@@ -1,0 +1,53 @@
+<h1>List Test Run</h1>
+
+<table class="table3">
+  <thead>
+    <tr>
+      <th>Test ID</th>
+      <th>Description</th>
+      <th>Tester</th>
+      <th>Version Under Test</th>
+      <th>Status</th>
+      <th>Priority</th>
+      <th>Risk</th>
+      <th>Plan Comp Date</th>
+      <th>Actl Start Time</th>
+      <th>Actl Comp Time</th>
+      <th>Test type</th>
+      <th>Comment</th>
+      <th>Specification</th>
+      <th>Bug</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_items.each do |test_item| %>
+      <tr>
+        <td><%= test_item.track_id %></td>
+        <td><%= test_item.description %></td>
+        <td><%= test_item.tester %></td>
+        <td><%= test_item.version %></td>
+        <td><%= test_item.status %></td>
+        <td><%= test_item.priority %></td>
+        <td><%= test_item.risk %></td>
+        <td><%= test_item.plan_comp_date %></td>
+        <td><%= test_item.actl_start_time %></td>
+        <td><%= test_item.actl_comp_time %></td>
+        <td><%= test_item.test_type %></td>
+        <td><%= test_item.comment %></td>
+        <td><%= test_item.specification %></td>
+        <td><%= test_item.bug_id %></td>
+        <td><%= link_to 'Show', test_item %></td>
+        <td><%= link_to 'Edit', edit_test_item_path(test_item) %></td>
+        <td><%= link_to 'Destroy', test_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test item', new_test_item_path %>

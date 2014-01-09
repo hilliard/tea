@@ -1,0 +1,18 @@
+<h1>Admin Roles</h1>
+
+  <table class="table3">
+    <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+    </thead>
+    <% for role in @roles %>
+        <tr>
+          <td><%= role.name %></td>
+          <td><%= role.description %></td>
+          <td><%= link_to 'Delete', role, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+    <% end %>
+  </table>
+  

@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Test ID:</strong>
+  <%= @test_item.track_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @test_item.description %>
+</p>
+
+<p>
+  <strong>Tester:</strong>
+  <%= @test_item.tester %>
+</p>
+<p>
+  <strong>Version:</strong>
+  <%= @test_item.version %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @test_item.status %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @test_item.priority %>
+</p>
+
+<p>
+  <strong>Risk:</strong>
+  <%= @test_item.risk %>
+</p>
+
+<p>
+  <strong>Plan Comp Date:</strong>
+  <%= @test_item.plan_comp_date %>
+</p>
+
+<p>
+  <strong>Actl Start Time:</strong>
+  <%= @test_item.actl_start_time %>
+</p>
+
+<p>
+  <strong>Actl Comp Time:</strong>
+  <%= @test_item.actl_comp_time %>
+</p>
+
+<p>
+  <strong>Test type:</strong>
+  <%= @test_item.test_type %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @test_item.comment %>
+</p>
+
+<p>
+  <strong>Specification:</strong>
+  <%= @test_item.specification %>
+</p>
+
+<p>
+  <strong>Bug:</strong>
+  <%= @test_item.bug_id %>
+</p>
+
+<%= link_to 'Edit', edit_test_item_path(@test_item) %> |
+<%= link_to 'Back', test_items_path %>

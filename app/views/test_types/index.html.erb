@@ -1,0 +1,27 @@
+<h1>Listing test_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Testtype name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_types.each do |test_type| %>
+      <tr>
+        <td><%= test_type.testtype_name %></td>
+        <td><%= link_to 'Show', test_type %></td>
+        <td><%= link_to 'Edit', edit_test_type_path(test_type) %></td>
+        <td><%= link_to 'Destroy', test_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test type', new_test_type_path %>

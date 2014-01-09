@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  precondition: MyText
+  step: MyText
+  testdata: MyText
+  expected_results: 
+  subsystem: MyString
+  postcondition: MyText
+  comments: MyText
+
+two:
+  title: MyString
+  precondition: MyText
+  step: MyText
+  testdata: MyText
+  expected_results: 
+  subsystem: MyString
+  postcondition: MyText
+  comments: MyText

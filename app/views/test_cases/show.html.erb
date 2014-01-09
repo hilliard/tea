@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @test_case.title %>
+</p>
+
+<p>
+  <strong>Precondition:</strong>
+  <%= @test_case.precondition %>
+</p>
+
+<p>
+  <strong>Step:</strong>
+  <%= @test_case.step %>
+</p>
+
+<p>
+  <strong>Testdata:</strong>
+  <%= @test_case.testdata %>
+</p>
+
+<p>
+  <strong>Expected results:</strong>
+  <%= @test_case.expected_results %>
+</p>
+
+<p>
+  <strong>Subsystem:</strong>
+  <%= @test_case.subsystem %>
+</p>
+
+<p>
+  <strong>Postcondition:</strong>
+  <%= @test_case.postcondition %>
+</p>
+
+<p>
+  <strong>Requirement:</strong>
+  <%= @test_case.requirement_reference %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @test_case.comments %>
+</p>
+
+<%= link_to 'Edit', edit_test_case_path(@test_case) %> |
+<%= link_to 'Back', test_cases_path %>

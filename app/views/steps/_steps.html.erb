@@ -1,0 +1,10 @@
+<li>
+  <span class="content"><%= step.step_number %></span>
+  <span class="content"><%= step.action %></span>
+  <span class="content"><%= step.expected_result %></span>
+  <span class="content"><%= step.status %></span>
+
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(step.created_at) %> ago.
+  </span>
+</li>

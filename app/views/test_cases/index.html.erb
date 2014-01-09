@@ -1,0 +1,43 @@
+<h1>Listing test_cases</h1>
+
+<table class="table3">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Precondition</th>
+      <th>Step</th>
+      <th>Testdata</th>
+      <th>Expected results</th>
+      <th>Subsystem</th>
+      <th>Postcondition</th>
+      <th>Requirement</th>
+      <th>Comments</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_cases.each do |test_case| %>
+      <tr>
+        <td><%= test_case.title %></td>
+        <td><%= test_case.precondition %></td>
+        <td><%= test_case.step %></td>
+        <td><%= test_case.testdata %></td>
+        <td><%= test_case.expected_results %></td>
+        <td><%= test_case.subsystem %></td>
+        <td><%= test_case.postcondition %></td>
+        <td><%= test_case.requirement_reference %></td>
+        <td><%= test_case.comments %></td>
+        <td><%= link_to 'Show', test_case %></td>
+        <td><%= link_to 'Edit', edit_test_case_path(test_case) %></td>
+        <td><%= link_to 'Destroy', test_case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test case', new_test_case_path %>

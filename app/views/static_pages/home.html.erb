@@ -1,0 +1,16 @@
+<% provide(:title, 'Home') %>
+
+
+<div class="center hero-unit">
+ <%= link_to image_tag("CBlogo.png", alt: "ClickBank"), 'http://www.clickbank.com' %>
+  <h1>Tester Execution Home</h1>
+
+  <h2>
+    This is the home page for the Tester Execution Application.
+  </h2>
+  <% if current_user %>
+       <%= link_to "Sign Out", signed_out_path, class: "btn btn-large btn-primary" %>
+  <% else %>
+       <%= link_to "Sign In Now!", sign_in_path, class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>

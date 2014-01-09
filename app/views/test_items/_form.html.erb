@@ -1,0 +1,95 @@
+<%= form_for(@test_item) do |f| %>
+
+  <% if @test_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@test_item.errors.count, "error") %> prohibited this test_item from being saved:</h2>
+
+      <ul>
+      <% @test_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+
+    <div class="field">
+      <%= f.label 'Test ID:' %><br>
+      <%= f.text_field :track_id %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_field :description %>
+    </div>
+    <div class="field">
+      <%= f.label :tester %><br>
+      <%#= f.text_field :tester %>
+      <%= f.collection_select(:tester, User.all, :username, :username, prompt: "Select a Tester") %>
+    </div>
+   <div class="field">
+      <%= f.label 'Version Under Test:' %><br>
+      <%#= f.text_field :version %>
+      <%= f.collection_select(:version, Version.all, :version_name, :version_name, prompt: "Select a Version") %>
+    </div>
+    <div class="field">
+      <%= f.label :status %><br>
+      <%#= f.text_field :status %>
+      <%= f.collection_select(:status, Status.all, :status_name, :status_name) %>
+    </div>
+    <div class="field">
+      <%= f.label :priority %><br>
+      <%#= f.text_field :priority %>
+      <%= f.collection_select(:priority, Priority.all, :priority_name, :priority_name) %>
+    </div>
+    <div class="field">
+      <%= f.label :risk %><br>
+      <%#= f.text_field :risk %>
+      <%= f.collection_select(:risk, Risk.all, :risk_name, :risk_name) %>
+    </div>
+    <div class="field">
+      <%= f.label 'Planned Completion Date' %><br>
+      <%= f.date_select :plan_comp_date, {discard_year: true} %>
+    </div>
+    <div class="field">
+      <%= f.label 'Actual Start Time' %><br>
+      <%= f.datetime_select :actl_start_time, {discard_year: true} %>
+    </div>
+    <div class="field">
+      <%= f.label 'Actual Completion Time' %><br>
+      <%= f.datetime_select :actl_comp_time, {discard_year: true} %>
+    </div>
+    <div class="field">
+      <%= f.label :test_type %><br>
+      <%#= f.text_field :test_type %>
+      <%= f.collection_select(:test_type, TestType.all, :testtype_name, :testtype_name) %>
+    </div>
+    <div class="field">
+      <%= f.label :comment %><br>
+      <%= f.text_area :comment %>
+    </div>
+    <div class="field">
+      <%= f.label :specification %><br>
+      <%= f.text_field :specification %>
+    </div>
+    <div class="field">
+      <%= f.label :bug_id %><br>
+      <%= f.text_field :bug_id %>
+    </div>
+
+      <div class="form-actions">
+        <div class="col-md-5">
+          <%= f.submit 'Done', class: "btn btn-medium btn-primary"  %> <br>
+          <%= link_to 'Back To List', test_items_path %>
+
+        </div>
+      </div>
+
+</div>
+
+
+<%#= link_to 'Back', test_items_path %>
+
+
+
+<% end %>

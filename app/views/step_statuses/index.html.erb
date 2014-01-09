@@ -1,0 +1,27 @@
+<h1>Listing step_statuses</h1>
+
+<table class="table3">
+  <thead>
+    <tr>
+      <th>Stepstatus name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @step_statuses.each do |step_status| %>
+      <tr>
+        <td><%= step_status.stepstatus_name %></td>
+        <td><%= link_to 'Show', step_status %></td>
+        <td><%= link_to 'Edit', edit_step_status_path(step_status) %></td>
+        <td><%= link_to 'Destroy', step_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Step status', new_step_status_path %>
