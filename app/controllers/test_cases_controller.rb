@@ -72,4 +72,9 @@ class TestCasesController < ApplicationController
     def test_case_params
       params.require(:test_case).permit(:title, :precondition, :step, :testdata, :expected_results, :subsystem, :postcondition, :requirement_reference, :comments)
     end
+
+    def step_params
+      params.require(:step).permit(:step_number, :action, :expected_result, :status)
+    end
+
 end

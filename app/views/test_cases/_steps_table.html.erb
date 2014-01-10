@@ -1,0 +1,24 @@
+<table id="steps-table" class="table table-hover table-striped">
+  <thead>
+  <th>Step Number</th>
+  <th>Action</th>
+  <th>Expected Result</th>
+  <th>Status</th>
+  <th></th>
+  </thead>
+  <tbody>
+  <%= f.fields_for(:steps) do |steps_form| %>
+    <tr class="fields">
+      <td><%= steps_form.text_field(:step_number) %></td>
+      <td><%= steps_form.text_field(:action) %></td>
+      <td><%= steps_form.text_field(:expected_result) %></td>
+      <td><%= steps_form.text_field(:status) %></td>
+      <%# if current_page?(new_test_case_path) || current_page?(edit_test_case_path) %>
+      <td>
+        <%= link_to_remove_fields('<i class="icon-remove"></i>'.html_safe, steps_form, :title => "Delete this Step.") %>
+      </td>
+      <%# end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
