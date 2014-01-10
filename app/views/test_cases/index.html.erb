@@ -32,7 +32,7 @@
         <td><%= test_case.comments %></td>
         <td><%= link_to('<i class="icon-eye-open"/>'.html_safe, test_case, :title => "View #{ test_case.title")  %></td>
         <td><%= link_to('<i class="icon-edit"/>'.html_safe, edit_test_case_path(test_case), :title => "Edit #{ test_case.title") %></td>
-        <td><%= link_to('<i class="icon-remove"/>'.html_safe, test_case, :method => :delete, :confirm => "Are you sure you want to permanently delete the #{ test_case.title } and all its associated Pilots?", :title => "Delete #{ test_case.title") %></td>
+        <td><%= link_to('<i class="icon-remove"/>'.html_safe, test_case, :method => :delete, :confirm => "Are you sure you want to permanently delete the #{ test_case.title } and all its associated Steps?", :title => "Delete #{ test_case.title") %></td>
         <td><%= link_to 'Show', test_case %></td>
         <td><%= link_to 'Edit', edit_test_case_path(test_case) %></td>
         <td><%= link_to 'Destroy', test_case, method: :delete, data: { confirm: 'Are you sure?' } %></td>

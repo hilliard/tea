@@ -34,7 +34,7 @@ var stepFieldsUI = {
 };
 
 // Configuration for the Add/Edit Test Case screen's functionality:
-//  formId:  The ID of the <FORM> that contains the input fields that need to be captured and appended to the table of Pilots.
+//  formId:  The ID of the <FORM> that contains the input fields that need to be captured and appended to the table of Steps.
 //  tableId:  The ID of the <TABLE> that represents the Steps assigned to a particular Test Case.
 //  inputFieldClassSelector:  The CSS class that is assigned to all the data entry/input fields that need to be collected
 //      for appending to th Steps table (and ultimately for saving to the database).
