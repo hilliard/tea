@@ -11,38 +11,39 @@ class TestCase < ActiveRecord::Base
             :uniqueness => { :case_sensitive => false },
             :length => { :maximum => 50, :minimum => 3 }
 
-  validates :precondition,
-            :presence => true,
-            :length => { :maximum => 50, :minimum => 3 }
+  # validates :precondition,
+  #          :presence => true,
+  #          :length => { :maximum => 50, :minimum => 3 }
+  #
 
   validates :step,
             :presence => true,
-            :length => { :maximum => 50, :minimum => 3 }
+            :length => { :maximum => 50, :minimum => 1 }
 
-  validates :expected_results,
-            :presence => true,
-            :uniqueness => { :case_sensitive => false },
-            :length => { :maximum => 50, :minimum => 3 }
+  # validates :expected_results,
+  #         :presence => true,
+  #         :uniqueness => { :case_sensitive => false },
+  #         :length => { :maximum => 50, :minimum => 3 }
 
-  validates :subsystem,
-            :presence => true,
-            :uniqueness => { :case_sensitive => false },
-            :length => { :maximum => 50, :minimum => 3 }
+  #validates :subsystem,
+  #          :presence => true,
+  #          :uniqueness => { :case_sensitive => false },
+  #          :length => { :maximum => 50, :minimum => 1 }
 
-  validates :postcondition,
-            :presence => true,
-            :uniqueness => { :case_sensitive => false },
-            :length => { :maximum => 50, :minimum => 3 }
+  # validates :postcondition,
+            # :presence => true,
+            # :uniqueness => { :case_sensitive => false },
+            # :length => { :maximum => 50, :minimum => 3 }
 
-  validates :requirement_reference,
-            :presence => true,
-            :uniqueness => { :case_sensitive => false },
-            :length => { :maximum => 50, :minimum => 3 }
+  # validates :requirement_reference,
+  #          :presence => true,
+  #          :uniqueness => { :case_sensitive => false },
+  #          :length => { :maximum => 50, :minimum => 3 }
 
-  validates :comments,
-            :presence => true,
-            :uniqueness => { :case_sensitive => false },
-            :length => { :maximum => 50, :minimum => 3 }
+  # validates :comments,
+  #          :presence => true,
+  #          :uniqueness => { :case_sensitive => false },
+  #          :length => { :maximum => 50, :minimum => 3 }
 
 
 

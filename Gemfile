@@ -38,7 +38,7 @@ end
 gem 'bcrypt-ruby',  :require => "bcrypt"
 
 # attr_accessible` is extracted out of Rails into a gem
-gem 'protected_attributes'
+# gem 'protected_attributes'
 
 # some protection from robots
 gem 'recaptcha', :require => "recaptcha/rails"

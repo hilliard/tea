@@ -5,10 +5,10 @@ class CreateSteps < ActiveRecord::Migration
       t.text :action
       t.text :expected_result
       t.string :status
-      t.string :system
-      t.string :subsystem
 
       t.timestamps
     end
+    add_index :steps, :test_case_id, { :name => "ix_steps_test_case" }
+    add_index :steps, :step_number, { :name => "uix_steps_step_number", :unique => true }
   end
 end

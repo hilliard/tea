@@ -1,11 +1,11 @@
 class UserMailer < ActionMailer::Base
-  default from: 'marc.clifton@outlook.com'
+  default from: 'hilliard@outlook.com'
 
   def welcome_email(user)
     @user = user
     @url = 'http://localhost:3000/sign_in'
     @site_name = "localhost"
-    mail(:to => user.email, :subject => 'Welcome to my website.')
+    mail(:to => user.email, :subject => 'Welcome to Test Execution Application.')
   end
 
   def reset_password_email(user)

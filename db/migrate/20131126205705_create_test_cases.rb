@@ -13,6 +13,7 @@ class CreateTestCases < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :test_cases, :name, { :name => "uix_test_cases_name", :unique => true }
   end
 
   def self.down

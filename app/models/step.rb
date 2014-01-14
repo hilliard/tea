@@ -9,7 +9,7 @@ class Step < ActiveRecord::Base
             :presence => true,
             :length => { :maximum => 76 }
 
-  validates :expected_result,
-            :presence => true,
-            :length => { :maximum => 76, :minimum => 5 }
+  # validates :expected_result,
+  #          :presence => true,
+  #          :length => { :maximum => 76, :minimum => 3 }
 end
