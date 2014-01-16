@@ -1,4 +1,4 @@
-<%= form_for(@test_case, :html => {:class => "form form-horizontal" }) do |f| %>
+<%= form_for(@test_case) do |f| %>
   <% if @test_case.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@test_case.errors.count, "error") %> prohibited this test_case from being saved:</h2>
@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="container">
   <fieldset>
     <legend><%= "#{ @test_case.title } " unless @test_case.title.nil?  %>Test Case Information</legend>
 
@@ -32,7 +32,7 @@
     <div class="control-group">
       <%= f.label(:testdata, :class => "control-label") %>
       <div class="controls">
-        <%= f.check_box(:testdata, :class => "checkbox") %>
+        <%= f.text_field(:testdata, :class => "input-xlarge") %>
       </div>
     </div>
 
@@ -46,7 +46,8 @@
     <div class="control-group">
       <%= f.label(:subsystem, :class => "control-label") %>
       <div class="controls">
-        <%= f.text_area(:subsystem, :class => "input-xlarge", :rows => "3") %>
+        <%= f.text_field(:subsystem, :class => "input-xlarge") %>
+        <%#= f.collection_select(:priority, Subsystem.all, :subsystem_name, :subsystem_name) %>
       </div>
     </div>
 
@@ -54,77 +55,44 @@
     <div class="control-group">
       <%= f.label(:postcondition, :class => "control-label") %>
       <div class="controls">
-        <%= f.text_area(:postcondition, :class => "input-xlarge", :rows => "3") %>
+        <%= f.text_field(:postcondition, :class => "input-xlarge") %>
       </div>
     </div>
 
     <div class="control-group">
       <%= f.label(:requirement_reference, :class => "control-label") %>
       <div class="controls">
-        <%= f.text_area(:requirement_reference, :class => "input-xlarge", :rows => "3") %>
+        <%= f.text_field(:requirement_reference, :class => "input-xlarge") %>
       </div>
     </div>
 
     <div class="control-group">
       <%= f.label(:comments, :class => "control-label") %>
       <div class="controls">
-        <%= f.text_area(:comments, :class => "input-xlarge", :rows => "3") %>
+        <%= f.text_area(:comments, :class => "input-xlarge", :rows => "3" ) %>
       </div>
     </div>
 
-    <div class="control-group">
-      <%= f.label(:thing, :class => "control-label") %>
-      <div class="controls">
-        <%= f.text_area(:thing, :class => "input-xlarge", :rows => "3") %>
-      </div>
-    </div>
-  </fieldset>
+ </fieldset>
+ </div>
 
-  <fieldset>
-    <legend>Steps <%= "That Belong to   #{ @test_case.title }" unless @test_case.title.blank? %></legend>
-    <%= render('steps_table', :f => f) %>
-    <%= link_to_add_fields("Add a Step", f, :steps, :class => "btn btn-primary", :title => "Add a new Step to the Test Case.") %>
-    <p></p>
-  </fieldset>
+  <div class="container">
+    <fieldset>
+      <legend>Steps <%= "That Belong to   #{ @test_case.title }" unless @test_case.title.blank? %></legend>
+      <%= render('steps_table', :f => f) %>
+      <%= link_to_add_fields("Add a Step", f, :steps, :class => "btn btn-primary", :title => "Add a new Step to the Test Case.") %>
+      <p></p>
+    </fieldset>
+  </div>
 
 
-
-
-
-
-
-
- <div class="row">
-   <div class="col-md-6">
-
-
-      <div class="field">
-        <%= f.label :step %><br>
-        <%= f.text_area :step %>
-      </div>
-
-     <!-- The Step Section -->
-     <div>
-       <div class="span8">
-         <% if @test_case.steps.any? %>
-             <h3>Steps (<%= @test_case.steps.count %>)</h3>
-             <ol class="steps">
-               <%= render @steps %>
-             </ol>
-             <%= will_paginate @steps %>
-         <% end %>
-       </div>
-     </div>
+  <div class="center">
+    <%= f.submit("Save Test Case", :class => "btn btn-primary", :title => "Save the changes to this Test Case.") %>
+    <%= link_to("Cancel", test_cases_path, :confirm => "Are you sure you want to cancel?  Any changes will be lost.", :class => "btn btn-inverse", :title => "Cancel the changes and return to the Test Case page.") %>
+  </div>
 
 
 
 
 
-
-      <div class="actions">
-        <%= f.submit %>
-        <%= link_to 'Back', test_cases_path %>
-      </div>
-     </div>
-   </div>
 <% end %>

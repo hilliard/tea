@@ -64,5 +64,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :username, :role_mask, :password, :password_confirmation, :new_password, :new_password_confirmation, :remember_me)
+  end
+
   
 end

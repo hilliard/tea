@@ -52,7 +52,8 @@ Tea::Application.routes.draw do
   delete "user/:id" => "admin#delete_user", :as => "user"
 
   get "new_role" => "authentication#new_role"
-  # put "new_role" => "authentication#create_role"
+  post "new_role" => "authentication#new_role"
+  put "new_role" => "authentication#create_role"
 
   get "admin_roles" => "admin#roles"
   delete "role/:id" => "admin#delete_role", :as => "role"

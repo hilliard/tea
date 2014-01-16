@@ -1,4 +1,5 @@
 class TestCase < ActiveRecord::Base
+  attr_accessible :title, :precondition, :step, :testdata, :expected_results, :subsystem, :postcondition, :requirement_reference, :comments
   has_many :steps
   accepts_nested_attributes_for :steps,
                                 :reject_if => :all_blank,

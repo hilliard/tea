@@ -1,4 +1,5 @@
 class Step < ActiveRecord::Base
+  attr_accessible :step_number, :action, :expected_result
   belongs_to :test_case
 
   validates :step_number,

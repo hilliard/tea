@@ -8,7 +8,7 @@ class CreateSteps < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :steps, :test_case_id, { :name => "ix_steps_test_case" }
-    add_index :steps, :step_number, { :name => "uix_steps_step_number", :unique => true }
+    # add_index :steps, :test_case_id
+    add_index :steps, :step_number,  :unique => true
   end
 end

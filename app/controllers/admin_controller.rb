@@ -68,4 +68,21 @@ class AdminController < ApplicationController
     end
   end
 
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def set_role
+    @role = Role.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def role_params
+    params.require(:role).permit(:name, :description)
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :username, :role_mask, :password, :password_confirmation, :new_password, :new_password_confirmation, :remember_me)
+  end
+
 end

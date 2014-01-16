@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204180628) do
+ActiveRecord::Schema.define(version: 20131129155555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20131204180628) do
     t.datetime "updated_at"
   end
 
+  add_index "steps", ["step_number"], name: "index_steps_on_step_number", unique: true, using: :btree
+
   create_table "test_cases", force: true do |t|
     t.string   "title"
     t.text     "precondition"
@@ -69,6 +71,8 @@ ActiveRecord::Schema.define(version: 20131204180628) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "test_cases", ["title"], name: "index_test_cases_on_title", unique: true, using: :btree
 
   create_table "test_items", force: true do |t|
     t.string   "track_id"

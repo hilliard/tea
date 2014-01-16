@@ -273,4 +273,20 @@ class AuthenticationController < ApplicationController
     end
   end
 
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :username, :role_mask, :password, :password_confirmation, :new_password, :new_password_confirmation, :remember_me)
+  end
+
+  def set_role
+    @role = Role.find(params[:id])
+  end
+
+  def role_params
+    params.require(:role).permit(:name, :description)
+  end
+
 end

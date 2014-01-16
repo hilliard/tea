@@ -1,0 +1,27 @@
+
+
+<div class="field">
+  <%= f.label :step %><br>
+  <%= f.text_area :step %>
+</div>
+
+<!-- The Step Section -->
+<div>
+  <div class="span8">
+    <% if @test_case.steps.any? %>
+      <h3>Steps (<%= @test_case.steps.count %>)</h3>
+      <ol class="steps">
+        <%= render @steps %>
+      </ol>
+      <%= will_paginate @steps %>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="actions">
+    <%= f.submit %>
+    <%= link_to 'Back', test_cases_path %>
+  </div>
+</div>

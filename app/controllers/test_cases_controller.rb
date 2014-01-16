@@ -68,6 +68,10 @@ class TestCasesController < ApplicationController
       @test_case = TestCase.find(params[:id])
     end
 
+    def set_step
+      @step = Step.find(params[:id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_case_params
       params.require(:test_case).permit(:title, :precondition, :step, :testdata, :expected_results, :subsystem, :postcondition, :requirement_reference, :comments)
